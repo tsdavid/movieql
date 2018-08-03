@@ -1,0 +1,29 @@
+type Movie {
+    id:Int!
+    title:String!
+    rating:Float
+    description_intro:String
+    language:String
+    medium_cover_image:String
+    genres:[String]
+}
+type Price{
+    pnu: Int!
+    stdrYear:Int!
+    stdrMt:Int!
+    ldCode:Int!
+    ldCodeNm:String!
+    aphusSeCodeNm:String!
+    aphusNm:String!
+    prvuseAr:Float!
+    pblntfPc:Int!
+    lastUpdtDt:Float!
+
+}
+
+type Query {
+    movies(limit: Int , rating: Float): [Movie]!
+    movie(id:Int!):Movie
+    suggestions(id:Int!):[Movie]!
+    prices(pnu: Int! , stdrYear:Int!): [Price]!
+}
